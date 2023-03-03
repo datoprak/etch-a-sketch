@@ -63,7 +63,7 @@ button {
   flex-wrap: wrap;
   flex: 0 0 640px;
   max-height: 640px;
-  border: solid 1px black;
+  border: solid 5px black;
   background-color: white;
 }
 
@@ -72,8 +72,4 @@ button {
   margin: 0;
   border: 0;
   user-select: none;
-}
-
-.square {
-  background-color: black;
 }

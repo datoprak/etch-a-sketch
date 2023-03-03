@@ -12,14 +12,13 @@ const defaultColor = colorPicker.value;
 const defaultMode = "color";
 let color = defaultColor;
 let mode = defaultMode;
-let opacity = 0.1;
+let clicked = false;
 
 const sliderLabel = document.createElement("p");
 sliderLabel.classList.add("slider-label");
 sliderLabel.textContent = `${defaultSize} x ${defaultSize}`;
 sliderContainer.appendChild(sliderLabel);
 
-let clicked = false;
 document.body.onmouseup = () => (clicked = false);
 document.body.onmousedown = () => (clicked = true);
 
@@ -72,17 +71,14 @@ colorPicker.oninput = e => {
 
 colorButton.onclick = () => {
   mode = "color";
-  console.log(mode);
 };
 
 rainbowButton.onclick = () => {
   mode = "rainbow";
-  console.log(mode);
 };
 
 shadeButton.onclick = () => {
   mode = "shade";
-  console.log(mode);
 };
 
 clearButton.onclick = () => {
