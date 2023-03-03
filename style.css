@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  background-color: #ECF2FF;
+  font-family: "Roboto", sans-serif;
+}
+
 .header {
   text-align: center;
   font-size: 64px;
@@ -19,6 +26,29 @@
   gap: 64px;
 }
 
+#color-picker {
+  height: 60px;
+  width: 60px;
+  border: none;
+  background-color: transparent;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  height: 64px;
+  width: 128px;
+  background-color: #3E54AC;
+  color: #ECF2FF;
+  border: none;
+  border-radius: 16px;
+}
+
 .slider-container > p {
   text-align: center;
 }
@@ -29,10 +59,10 @@
   flex: 0 0 640px;
   max-height: 640px;
   border: solid 1px black;
+  background-color: white;
 }
 
 .grid-square {
-  background-color: aquamarine;
   padding: 0;
   margin: 0;
   border: 0;

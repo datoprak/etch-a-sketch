@@ -12,15 +12,19 @@
     <div class="header">Etch-A-Sketch</div>
     <div class="content">
       <div class="settings">
-        <input
-          type="color"
-          id="color-picker"
-          name="color-picker"
-          value="black"
-        />
+        <div class="color-picker-container">
+          <label for="color-picker" class="color-picker-label">Pick a color:</label>
+          <input
+            type="color"
+            id="color-picker"
+            name="color-picker"
+            value="#000000"
+          />
+        </div>
         <button class="rainbow-button">Rainbow Mode</button>
         <button class="shade-button">Shade Mode</button>
         <div class="slider-container">
+          <label for="slider">Set the grid size: </label>
           <input
             type="range"
             id="slider"
