@@ -5,6 +5,7 @@ const colorPicker = document.querySelector("#color-picker");
 const colorButton = document.querySelector(".color-button");
 const rainbowButton = document.querySelector(".rainbow-button");
 const shadeButton = document.querySelector(".shade-button");
+const clearButton = document.querySelector(".clear-button");
 
 const defaultSize = slider.value;
 const defaultColor = colorPicker.value;
@@ -51,8 +52,6 @@ function draw(e) {
         .toUpperCase();
     e.target.style.backgroundColor = randomColor;
   } else if (mode === "shade") {
-    rgbaColor = `rgb(0, 0, 0, ${opacity})`;
-
     if (e.target.style.backgroundColor.slice(-2, -1) !== "0") {
       let currentOpacity = e.target.style.backgroundColor.slice(-4, -1);
       if (currentOpacity < 1) {
@@ -84,6 +83,12 @@ rainbowButton.onclick = () => {
 shadeButton.onclick = () => {
   mode = "shade";
   console.log(mode);
+};
+
+clearButton.onclick = () => {
+  setupGrid(defaultSize);
+  sliderLabel.textContent = `${defaultSize} x ${defaultSize}`;
+  slider.value = defaultSize;
 };
 
 slider.onchange = e => {
