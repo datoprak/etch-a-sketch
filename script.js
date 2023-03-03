@@ -2,6 +2,16 @@ const defaultSize = 16;
 
 const grid = document.querySelector(".grid");
 const slider = document.querySelector("#slider");
+const sliderContainer = document.querySelector(".slider-container");
+
+const sliderLabel = document.createElement("p");
+sliderLabel.classList.add("slider-label");
+sliderLabel.textContent = `${defaultSize} x ${defaultSize}`;
+sliderContainer.appendChild(sliderLabel);
+
+let clicked = false;
+document.body.onmouseup = () => (clicked = false);
+document.body.onmousedown = () => (clicked = true);
 
 function setupGrid(size) {
   grid.innerHTML = "";
@@ -19,21 +29,18 @@ function setupGrid(size) {
   }
 }
 
-let clicked = false;
-document.body.onmouseup = () => (clicked = false);
-document.body.onmousedown = () => (clicked = true);
-
 function draw(e) {
-  if (e.type === "mouseover" && clicked) {
-    console.log(clicked);
-    e.target.style.backgroundColor = "black";
-  }
+  if (e.type === "mouseover" && !clicked) return;
+
+  e.target.style.backgroundColor = "black";
 }
 
 slider.onchange = e => {
   setupGrid(e.target.value);
-  console.log(e.target.value);
 };
+
+slider.oninput = e =>
+  (sliderLabel.textContent = `${e.target.value} x ${e.target.value}`);
 
 window.onload = () => {
   setupGrid(defaultSize);

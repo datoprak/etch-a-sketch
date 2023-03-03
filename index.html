@@ -9,17 +9,27 @@
     <title>Etch-A-Sketch</title>
   </head>
   <body>
+    <div class="header">Etch-A-Sketch</div>
     <div class="content">
-      <div class="slider-container">
+      <div class="settings">
         <input
-          type="range"
-          id="slider"
-          name="slider"
-          min="1"
-          max="64"
-          value="16"
+          type="color"
+          id="color-picker"
+          name="color-picker"
+          value="black"
         />
-        <label for="slider">Slider</label>
+        <button class="rainbow-button">Rainbow Mode</button>
+        <button class="shade-button">Shade Mode</button>
+        <div class="slider-container">
+          <input
+            type="range"
+            id="slider"
+            name="slider"
+            min="1"
+            max="64"
+            value="16"
+          />
+        </div>
       </div>
       <div class="grid"></div>
     </div>
