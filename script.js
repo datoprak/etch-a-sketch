@@ -1,8 +1,12 @@
-const defaultSize = 16;
-
 const grid = document.querySelector(".grid");
 const slider = document.querySelector("#slider");
 const sliderContainer = document.querySelector(".slider-container");
+const colorPicker = document.querySelector("#color-picker");
+const paintedSquares = document.querySelectorAll(".square");
+
+const defaultSize = slider.value;
+const defaultColor = colorPicker.value;
+let color = defaultColor;
 
 const sliderLabel = document.createElement("p");
 sliderLabel.classList.add("slider-label");
@@ -30,10 +34,13 @@ function setupGrid(size) {
 }
 
 function draw(e) {
-  if (e.type === "mouseover" && !clicked) return;
-
-  e.target.style.backgroundColor = "black";
+  if (e.type === "mouseover" && !clicked) return; // it's there to paint the first clicked div.
+  e.target.style.backgroundColor = color;
 }
+
+colorPicker.oninput = e => {
+  color = e.target.value;
+};
 
 slider.onchange = e => {
   setupGrid(e.target.value);
